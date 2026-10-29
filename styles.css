@@ -1,0 +1,316 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5 !important;
+  color: #333333 !important;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Recibo principal */
+.ticket {
+  border: 2px solid #0056b3;
+  padding: 20px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.ticket-header {
+  border-bottom: 2px solid #0056b3;
+  padding-bottom: 10px;
+}
+
+/* Logo y Título */
+.logo-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.header-logo {
+  width: 105px;
+  height: auto;
+  object-fit: contain;
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+.title-text {
+  text-align: left;
+}
+
+.title-text h3 {
+  margin: 0;
+  color: #0056b3;
+  font-size: 24px;
+}
+
+.title-text p {
+  margin: 2px 0 0 0;
+  font-size: 13px;
+}
+
+.folio-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.folio-row input {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  width: 90px;
+  border: 1px dashed #ccc;
+  text-align: center;
+}
+
+/* Filas del Formulario */
+.row {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  gap: 10px;
+}
+
+.row label {
+  font-weight: bold;
+  min-width: 80px;
+}
+
+.row input, .row select {
+  flex: 1;
+  padding: 6px;
+  border: none;
+  border-bottom: 1px solid #0056b3;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.row-services {
+  margin: 10px 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.section-title-inline {
+  font-weight: bold;
+}
+
+.section-label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  color: #0056b3;
+}
+
+/* DISEÑO DE CASILLAS CLARAS (CHECKBOXES) */
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border: 1.5px solid #0056b3;
+  background-color: #ffffff !important;   /* Fondo claro */
+  border-radius: 3px;
+  margin: 0;
+  -webkit-appearance: none;               /* Quita el color oscuro por defecto */
+  appearance: none;
+  display: grid;
+  place-content: center;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Palomita (check) blanca al seleccionar */
+input[type="checkbox"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #ffffff;
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked {
+  background-color: #0056b3 !important;   /* Fondo azul al seleccionar */
+  border-color: #0056b3 !important;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.meses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Cuadro de Cuota Centrado y en Rojo */
+.cuota-box {
+  background: #e6f0fa;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #0056b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  text-align: center;
+  color: #d9534f;
+}
+
+.cuota-box input {
+  font-size: 22px;
+  font-weight: bold;
+  width: 130px;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid #d9534f;
+  text-align: center;
+  color: #d9534f;
+  outline: none;
+}
+
+/* Quitar flechitas del campo número */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Cuadro de Observaciones */
+.comentarios-box {
+  margin-top: 15px;
+}
+
+.comentarios-box textarea {
+  width: 100%;
+  height: 65px;
+  padding: 8px 10px;
+  border: 1px solid #0056b3;
+  border-radius: 4px;
+  background-color: transparent;
+  color: inherit;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+}
+
+.ticket-footer {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* Botones de acción */
+.actions {
+  margin-top: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#btnWhatsApp {
+  background-color: #25D366;
+  color: white;
+}
+
+/* FORMATO DE IMPRESIÓN Y EXPORTACIÓN A PDF RECOR TADO Y OPTIMIZADO */
+@media print {
+  @page {
+    size: 135mm 190mm;   /* Tamaño ajustado para eliminar hoja gigante sobrante */
+    margin: 4mm;          /* Margen suave alrededor */
+  }
+
+  body {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .actions {
+    display: none !important;
+  }
+
+  .ticket {
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    padding: 12px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  input, select, textarea {
+    border: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+  }
+
+  /* FORZAR LA IMPRESIÓN EXACTA DE CASILLAS Y COLORES EN EL PDF */
+  input[type="checkbox"] {
+    border: 1.5px solid #000000 !important;
+    background-color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+  }
+
+  .comentarios-box textarea {
+    border: 1px solid #000000 !important;
+  }
+}
